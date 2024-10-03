@@ -1,0 +1,102 @@
+# "$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:blue0'
+    template = '{{ .Path }}'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:fg3'
+    background = 'transparent'
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} {{ if gt .Behind 0 }}{{ end }}{{ if gt .Ahead 0 }}{{ end }}'
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      commit_icon = '@'
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:yellow0'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}p:red0{{end}}",
+      "{{if eq .Code 0}}p:orange0{{end}}",
+    ]
+    background = 'transparent'
+    template = '❯'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}p:red0{{end}}",
+    "{{if eq .Code 0}}p:orange0{{end}}",
+  ]
+  background = 'transparent'
+  template = '❯ '
+
+[secondary_prompt]
+  foreground = 'p:orange0'
+  background = 'transparent'
+  template = '❯❯ '
+
+# GRUVBOX DARK COLORSCHEME
+[palette]
+bg0 = "#282828"
+bg1 = "#3c3836"
+bg2 = "#504945"
+bg3 = "#665c54"
+bg4 = "#7c6f64"
+fg0 = "#ebdbb2"
+fg1 = "#d5c4a1"
+fg2 = "#bdae93"
+fg3 = "#a89984"
+red0 = "#cc241d"
+orange0 = "#d65d0e"
+yellow0 = "#d79921"
+green0 = "#98971a"
+acqua0 = "#689d6a"
+blue0 = "#458588"
+purple0 = "#b16286"
+gray0 = "#a89984"
+red1 = "#fb4934"
+orange1 = "#fe8019"
+yellow1 = "#fabd2f"
+green1 = "#b8b26"
+acqua1 = "#8ec07c"
+blue1 = "#83a598"
+purple1 = "#d3869b"
+gray1 = "#928374"
