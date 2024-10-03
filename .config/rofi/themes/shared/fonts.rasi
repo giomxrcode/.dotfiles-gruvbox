@@ -1,0 +1,7 @@
+/*
+ * Fonts
+ */
+
+* {
+    font: "CaskaydiaCove Nerd Font 12";
+}
