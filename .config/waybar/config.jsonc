@@ -1,0 +1,149 @@
+{
+	// General settings
+
+	"layer": "top",
+	"position": "top",
+  "margin": "10 10 5 10",
+  "height": 15,
+
+	// Modules position
+
+	"modules-left": ["custom/power", "hyprland/workspaces", "custom/music"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["tray", "pulseaudio", "network", "clock", "custom/notification"],
+
+	// Modules
+
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "  {ifname}",
+		"format-disconnected": "disconnected",
+		"tootip-format": "{ifname} via {gwaddri}",
+		"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+		"tooltip-format-ethernet": "  {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+		"tooltip-format-disconnected": "disconnected",
+		"max-length": 30,
+		"on-click": "~/.config/rofi/scripts/wifimenu.sh"
+	},
+
+  /* WORKSPACES WITH NO APP ICONS
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "",
+      "urgent": "",
+      "persistent": "",
+      "special": "",
+      "empty": ""
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  */
+
+  /* WORKSPACES WITH APP ICONS */
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "󰕼",
+      "8": "",
+      "9": "",
+      "10": "",
+      "default": "",
+      "active": "",
+      "special": "",
+      "empty": ""
+	  },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  },
+
+  "hyprland/window": {
+    "icon": true,
+    "icon-size": 14,
+    "format": "{title}",
+    "max-length": 20
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+
+  "clock": {
+    "timezone": "America, Caracas",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%H:%M}",
+    "format-alt": "{:%d/%m/%Y}"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "󰂱  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", " ", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+	// Custom modules
+
+    "custom/notification": {
+    "tooltip": false,
+    "escape": true,
+    "exec": "swaync-client -swb",
+    "exec-if": "which swaync-client",
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#f38ba8'><sup></sup></span>",
+      "none": "<span color='#6c7086'><sup></sup></span>",
+      "dnd-notification": "<span foreground='#f38ba8'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": "󰵙<span foreground='#f38ba8'><sup></sup></span>",
+      "inhibited-none": "<sup>󰜺</sup>",
+      "dnd-inhibited-notification": "<span foreground='#f38ba8'><sup></sup></span>",
+      "dnd-inhibited-none": "<sup></sup>"
+    },
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "return-type": "json"
+  },
+
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 2,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ title }}'",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl play-pause",
+    "max-length": 20
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/powermenu.sh",
+    "format": " "
+  }
+}

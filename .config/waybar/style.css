@@ -1,0 +1,15 @@
+/* IMPORT COLORSCHEME
+ * Here you can import your colorscheme to use it with waybar.
+ * You can also use a custom one or a premade one!
+ */
+
+@import "themes/dark.css";
+
+/* IMPORT STYLES
+ * Here you can change the style of the Waybar with the one you like,
+ * or you can create your custom style and use it.
+ *
+ * Available designs: bubble and bar (more yet to come).
+ */
+
+@import "styles/bar.css";

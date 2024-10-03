@@ -1,0 +1,170 @@
+/* GENERAL SETTINGS */
+
+* {
+  font-family: CaskaydiaCove Nerd Font;
+  font-size: 15px;
+  min-height: 0;
+}
+
+#waybar {
+  color: @fg0;
+  background: @bg0h;
+  border-radius: 1rem;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0.4rem 0.4rem;
+}
+
+/* GLOBAL SETTINGS FOR MODULES */
+
+#workspaces,
+#window,
+#tray,
+#network,
+#clock,
+#pulseaudio,
+#battery,
+#custom-lock,
+#custom-power,
+#custom-music,
+#custom-notification {
+  background-color: @bg1;
+  padding: 0.5rem 0.5rem;
+}
+
+/* MODULES */
+
+#workspaces {
+  margin: 0 0.2rem;
+  padding: 3px;
+  border-radius: 0.8rem;
+}
+
+#workspaces button {
+  color: @fg1;
+  padding-right: 0.8rem;
+  padding-left: 0.4rem;
+  margin: 0;
+  border: 0 transparent;
+  border-radius: 0.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  color: @orange;
+}
+
+#workspaces button.empty {
+  color: @fg4;
+}
+
+#workspaces button.persistent {
+  color: @yellow;
+}
+
+#workspaces button.special {
+  color: @green;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#workspaces button:hover {
+  color: @orange0;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#window {
+  color: @fg1;
+  background-color: transparent;
+  margin: 0 0.2rem;
+  padding: 0 1rem;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#tray {
+  margin: 0 0.2rem;
+  padding: 0 0.8rem;
+  border-radius: 0.8rem;
+}
+
+#tray menu {
+  background-color: @bg0;
+}
+
+#tray menu menuitem {
+  color: @fg1;
+  transition-property: background-color;
+  transition-duration: 0.24s;
+}
+
+#tray menu menuitem:hover {
+  background-color: @bg0;
+}
+
+#network {
+  color: @fg1;
+  margin-right: 0.2rem;
+  padding-right: 1rem;
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+
+#pulseaudio {
+  color: @fg1;
+  margin-left: 0.2rem;
+  padding-left: 1rem;
+  border-radius: 0.8rem 0 0 0.8rem;
+}
+
+#clock {
+  color: @fg1;
+  margin: 0 0.2rem;
+  padding: 0 1rem;
+  border-radius: 0.8rem;
+}
+
+#battery {
+  color: @fg1;
+  border-radius: 0.8rem;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+/* CUSTOM MODULES  */
+
+#custom-notification {
+  color: @fg1;
+  margin-left: 0.2rem;
+  padding: 0 1rem;
+  border-radius: 0.8rem;
+}
+
+#custom-music {
+  color: @fg1;
+  margin: 0 0.2rem;
+  padding: 0 1rem;
+  border-radius: 0.8rem;
+}
+
+#custom-power {
+  color: @fg1;
+  margin-right: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 0.8rem;
+  border-radius: 0.8rem;
+}

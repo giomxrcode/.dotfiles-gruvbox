@@ -1,0 +1,45 @@
+/*
+* GRUVBOX DARK COLORPALETTE
+* MAINTAINED BY @giomxr.code
+*/
+
+/* BACKGROUNDS */
+@define-color bg0h    #1D2021;
+@define-color bg0s    #32302F;
+@define-color bg0     #282828;
+@define-color bg1     #3C3836;
+@define-color bg2     #504945;
+@define-color bg3     #665C54;
+@define-color bg4     #7C6F64;
+
+/* FOREGROUNDS */
+@define-color fg0     #FBF1C7;
+@define-color fg1     #EBDBB2;
+@define-color fg2     #D5C4A1;
+@define-color fg3     #BDAE93;
+@define-color fg4     #A89984;
+
+/* COLORS */
+@define-color gray    #928374;
+@define-color gray0   #A89984;
+
+@define-color red     #CC241D;
+@define-color red0    #FB4934;
+
+@define-color green   #98971A;
+@define-color green0  #B8BB26;
+
+@define-color yellow  #D79921;
+@define-color yellow0 #FABD2F;
+
+@define-color orange  #D65D0E;
+@define-color orange0 #FE8019;
+
+@define-color blue    #458588;
+@define-color blue0   #83A598;
+
+@define-color purple  #B16286;
+@define-color purple0 #D3869B;
+
+@define-color aqua    #689D6A;
+@define-color aqua0   #8EC07C;
