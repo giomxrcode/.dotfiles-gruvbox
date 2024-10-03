@@ -1,0 +1,6 @@
+/* 
+ * Here you can select the theme for SwayNC.
+ * Just change the path for the desired .css file.
+ */
+
+@import "themes/dark.css";
