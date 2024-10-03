@@ -1,0 +1,5 @@
+/* GNOME TERMINAL SETTINGS */
+VteTerminal, TerminalScreen, vte-terminal {
+  padding: 20px;
+  -VteTerminal-inner-border: 20px;
+}
